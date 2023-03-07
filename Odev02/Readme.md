@@ -6,6 +6,8 @@
  protected void UndoPassword()
     {
         public string text { get; set; } = "text-secondary";
+        public bool IsDisable { get; set; } = false;
+
 
         if (savedPasswords.Any())
         {
