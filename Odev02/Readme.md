@@ -5,6 +5,8 @@
 ```python
  protected void UndoPassword()
     {
+        public string text { get; set; } = "text-secondary";
+
         if (savedPasswords.Any())
         {
             text="text-dark";
@@ -25,9 +27,9 @@
   
    ```python  
      <div class="col-md-1">
-                            <span @onclick="@(()=>UndoPassword())" class="oi oi-action-undo  @text " aria-hidden="true"></span>
-                        </div>
-                         ```  
+     <span @onclick="@(()=>UndoPassword())" class="oi oi-action-undo  @text " aria-hidden="true"></span>
+     </div>
+    ```  
                         
     
    
