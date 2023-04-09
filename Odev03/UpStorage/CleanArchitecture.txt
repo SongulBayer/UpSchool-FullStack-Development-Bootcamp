@@ -1,0 +1,33 @@
+Onion Architecture
+
+Domain Katmaný: En içteki,merkez katmandýr.
+Entities,Value Object,Enumeration,Exceptions(Entity ile ilgili exceptionlar)
+
+
+Repository,Service ,Interface,/Core katmaný(Application)
+
+Domain ile iþ katmaný arasýnda soyutlama katmanýdýr!
+Tüm servis arayüzleri(interfecaleri) burada tanýmlanýr (IRepository, IXService)
+Repository ve Service Interface Katman -> Domain katmanýný refarans eder
+Bu katmanýn amacý veri eriþiminde gevþek baðlý (loose compling) bir yaklaþým sergileyecektir.
+DTO, ViewModel, Mapping, Validators, CQRS Pattern
+
+
+
+Persistence Katmaný 
+
+Veritabaný operasyonlarýn/veri eriþim mantýðýný yürüten katmandýr.
+Application katmanýndaki repository interfacelerinin concrete nesneleri burada oluþturulacaktýr
+DbContext, Migrations, Configurations, Seeding, Repository Conrete class
+
+
+Infrastructure Katmaný
+Persistence katmaný ile bütünleþebilen bir katmandýr diyebiliriz. Nihayetinde her ikiside iþ/business
+katmanýdýr.Sadece Persistanceden farký veritabanýnýn dýþýndaki operasyonlarý/serviseler/iþlemleri
+yürüttüðümüz katmandýr!
+Veritabanýndan olan veri eriþimi dýþýndaki tüm servisler bu katmanda inþa edilir.
+Email/Sms Service, Notification, Payment
+
+Presentation Katmaný
+ Kullanýcýnýn uygulamayla iletiþime geçtiði katmandýr
+ Web App, Web Api, MVC

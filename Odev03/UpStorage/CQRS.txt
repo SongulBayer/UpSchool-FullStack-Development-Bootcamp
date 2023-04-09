@@ -1,0 +1,13 @@
+CQRS Nedir :‘Command’ ve ‘Query’ sorumluluklarýnýn ayrýlmasý prensibini esas alan bir yaklaþýmý savunmaktadýr. 
+Command : Olmayan veriyi oluþturan ya da var olan bir veri üzerinde güncelleme veya silme iþlemi yapan isteklerdir.
+(insert, update, delete)
+Query : Mevcut verileri sadece listelemek, okumak yahut sunmak için read iþlemi yapan isteklerdir.
+(Select - Salt read iþlemi query dir.,)
+
+->CQRS, verileri güncellemek için ‘Command’ sýnýflarýný, okumak için ise ‘Query’ sýnýflarýný kullanmaktadýr.
+-> Handler : Uygulamada yapýlacak olan tüm Command ya da Query isteklerini iþleyecek ve sonuç olarak respose nesnelerini dönecek olan sýnýflarý barýndýrmaktadýr.
+
+MEDIATOR : Nesneler arasýndaki baðýmlýlýklarý tek bir merkezden yöneterek azaltmamýza imkan tanýr.
+- Mediator nesnesi, nesneler arasýndaki tüm iliþkileri kapsülleyerek, iletiþim merkezi görevi görür. Etkileþimleri kontrol ve koordine etmekten sorumludur.
+Ayrýca nesnelerin açýkça birbirlerine referansta bulunmasýný engelleyerek gevþek baðlanmayý teþvik eder.
+(Yani neseneler arasýndaki iletiþim merkezi)
